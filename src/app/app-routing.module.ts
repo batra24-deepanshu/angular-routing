@@ -6,10 +6,11 @@ import { HomeComponent } from './components/home/home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { UserComponent } from './components/user/user.component';
 import { UsersComponent } from './components/users/users.component';
+import { AuthGuardService } from './service/guards/auth-guard.service';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'users', component: UsersComponent, children: [{ path: ':id/:name', component: UserComponent },
+  { path: 'users', component: UsersComponent,canActivate:[AuthGuardService], children: [{ path: ':id/:name', component: UserComponent },
   { path: ':id/:name/edit', component: EditUserComponent }] },
 
   { path: 'categories', component: CategoriesComponent },
