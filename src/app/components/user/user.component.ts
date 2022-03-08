@@ -12,6 +12,11 @@ export class UserComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.user={
+      id:this.activeroute.snapshot.params['id'],
+      name:this.activeroute.snapshot.params['name']
+    }
+
     //through subscribe params
     this.activeroute.params.subscribe((data:Params)=>{
       this.user={
@@ -36,4 +41,13 @@ export class UserComponent implements OnInit {
     this.router.navigate(['/users',5,"Rama"],{queryParams:{page:1,search:"Leela"},fragment:"loading"})
   }
 
+  
+  // onUserEdit(){
+  //   this.router.navigate(['/users',this.user?.id,this.user?.name,'edit'])
+  // }
+
+  //preserving
+  onUserEdit(){
+    this.router.navigate(['/users',this.user?.id,this.user?.name,'edit'],{queryParamsHandling:'preserve'})
+  }
 }

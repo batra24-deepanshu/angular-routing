@@ -7,6 +7,7 @@ import { UsersComponent } from './components/users/users.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { HomeComponent } from './components/home/home.component';
 import { UserComponent } from './components/user/user.component';
+import { EditUserComponent } from './components/edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { UserComponent } from './components/user/user.component';
     UsersComponent,
     CategoriesComponent,
     HomeComponent,
-    UserComponent
+    UserComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,
