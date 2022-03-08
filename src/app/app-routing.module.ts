@@ -7,11 +7,13 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { UserComponent } from './components/user/user.component';
 import { UsersComponent } from './components/users/users.component';
 import { AuthGuardService } from './service/guards/auth-guard.service';
+import { DeactivateGuardSerice } from './service/guards/deactivate-guard.service';
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'users', component: UsersComponent,canActivateChild:[AuthGuardService], children: [{ path: ':id/:name', component: UserComponent },
-  { path: ':id/:name/edit', component: EditUserComponent }] },
+  { path: ':id/:name/edit', component: EditUserComponent,canDeactivate:[DeactivateGuardSerice] }] },
 
   { path: 'categories', component: CategoriesComponent },
   { path: 'not-found', component: PageNotFoundComponent },
