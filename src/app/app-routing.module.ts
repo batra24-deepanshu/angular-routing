@@ -11,7 +11,7 @@ import { DeactivateGuardSerice } from './service/guards/deactivate-guard.service
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent,data:{name:"ankur",age:20} },
   { path: 'users', component: UsersComponent,canActivateChild:[AuthGuardService], children: [{ path: ':id/:name', component: UserComponent },
   { path: ':id/:name/edit', component: EditUserComponent,canDeactivate:[DeactivateGuardSerice] }] },
 
