@@ -3,3 +3,5 @@
 <div>
     <button (click)="onCategoriesClick()">Go To Categories</button>
 </div>
+
+<a [routerLink]="['/users',7,'manish']" [queryParams]="{page:8,search:'leela'}" [fragment]="'load'">Get Manish Details</a>

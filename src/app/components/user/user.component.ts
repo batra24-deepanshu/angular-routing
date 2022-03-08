@@ -11,12 +11,26 @@ export class UserComponent implements OnInit {
   constructor(private activeroute:ActivatedRoute,private router:Router) { }
 
   ngOnInit(): void {
+
+    //through subscribe params
     this.activeroute.params.subscribe((data:Params)=>{
       this.user={
         id:data['id'],
         name:data['name']
       }
     })
+    //through snapshot query and fragment
+    console.log(this.activeroute.snapshot.queryParams);
+    console.log(this.activeroute.snapshot.fragment);
+
+    //through subsribe
+    this.activeroute.queryParams.subscribe((data)=>{
+      console.log(data);
+    })
+    this.activeroute.fragment.subscribe((data)=>{
+      console.log(data);
+    })
+
   }
   getRamaDetails(){
     this.router.navigate(['/users',5,"Rama"],{queryParams:{page:1,search:"Leela"},fragment:"loading"})
