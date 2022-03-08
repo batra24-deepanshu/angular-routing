@@ -1,2 +1,8 @@
 <h3>User with id {{user?.id}}</h3>
 <h3>User with name {{user?.name}}</h3>
+
+<div>
+    <a [routerLink]="['/users',1,'leela']">Get Details of Leela</a>
+    <!-- let say user.id=3,user.name="deepansji" -->
+    <!-- when we click this anchor component will not rerenderd , only url change data doesnot -->
+</div>
