@@ -8,6 +8,7 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { HomeComponent } from './components/home/home.component';
 import { UserComponent } from './components/user/user.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { EditUserComponent } from './components/edit-user/edit-user.component';
     CategoriesComponent,
     HomeComponent,
     UserComponent,
-    EditUserComponent
+    EditUserComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
